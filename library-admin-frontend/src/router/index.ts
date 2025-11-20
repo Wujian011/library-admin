@@ -48,6 +48,11 @@ const router = createRouter({
           component: () => import('../views/admin/BooksView.vue')
         },
         {
+          path: 'categories',
+          name: 'admin-categories',
+          component: () => import('../views/admin/ClassInfoView.vue')
+        },
+        {
           path: 'borrows',
           name: 'admin-borrows',
           component: () => import('../views/admin/BorrowsView.vue')
