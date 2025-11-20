@@ -1,0 +1,32 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+
+# Backend (Maven/Spring Boot)
+library-admin-backend/target/
+library-admin-backend/.mvn/
+library-admin-backend/mvnw
+library-admin-backend/mvnw.cmd
+
+# Frontend (Node/Nuxt)
+library-admin-frontend/node_modules/
+library-admin-frontend/.nuxt/
+library-admin-frontend/.output/
+library-admin-frontend/dist/
+library-admin-frontend/.env
+
+# Logs
+*.log
+
+# Database
+*.db
+*.sqlite
+
+# OS
+Thumbs.db
+/CLAUDE.md
+/.claude/
