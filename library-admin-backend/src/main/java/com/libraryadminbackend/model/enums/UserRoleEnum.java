@@ -1,6 +1,7 @@
 package com.libraryadminbackend.model.enums;
 
-import org.apache.commons.lang3.ObjectUtils;
+
+import cn.hutool.core.util.ObjUtil;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,7 +41,7 @@ public enum UserRoleEnum {
      * @return
      */
     public static UserRoleEnum getEnumByValue(String value) {
-        if (ObjectUtils.isEmpty(value)) {
+        if (ObjUtil.isEmpty(value)) {
             return null;
         }
         for (UserRoleEnum anEnum : UserRoleEnum.values()) {
