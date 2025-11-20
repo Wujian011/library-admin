@@ -21,8 +21,26 @@ export interface LoginUserVO {
   userAvatar?: string
   userProfile?: string
   userRole: string
+  userType: number // 1=管理员，2=读者
   createTime: string
   updateTime: string
+}
+
+// 用户分页查询参数
+export interface UserQueryRequest {
+  current: number
+  pageSize: number
+  userAccount?: string
+  userName?: string
+  userRole?: string
+}
+
+// 分页响应
+export interface PageResponse<T> {
+  records: T[]
+  total: number
+  current: number
+  size: number
 }
 
 // 基础响应结构
@@ -58,4 +76,32 @@ export const userLogout = () => {
  */
 export const getLoginUser = () => {
   return request.get<any, BaseResponse<LoginUserVO>>('/user/get/login')
+}
+
+/**
+ * 分页获取用户列表
+ */
+export const listUserByPage = (data: UserQueryRequest) => {
+  return request.post<any, BaseResponse<PageResponse<LoginUserVO>>>('/user/list/page', data)
+}
+
+/**
+ * 删除用户
+ */
+export const deleteUser = (id: number) => {
+  return request.post<any, BaseResponse<boolean>>('/user/delete', { id })
+}
+
+/**
+ * 添加用户
+ */
+export const addUser = (data: any) => {
+  return request.post<any, BaseResponse<number>>('/user/add', data)
+}
+
+/**
+ * 更新用户
+ */
+export const updateUser = (data: any) => {
+  return request.post<any, BaseResponse<boolean>>('/user/update', data)
 }
