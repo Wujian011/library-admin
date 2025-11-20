@@ -1,44 +1,48 @@
-# 图书管理系统 - 前端
+# library-admin-frontend
 
-基于 Nuxt 3 + Vue 3 + Nuxt UI + Pinia + Axios 构建的图书管理系统前端项目。
+This template should help get you started developing with Vue 3 in Vite.
 
-## 技术栈
+## Recommended IDE Setup
 
-- **Nuxt 3** - Vue 3 全栈框架
-- **Vue 3** - 渐进式 JavaScript 框架
-- **Nuxt UI** - 基于 Tailwind CSS 的 UI 组件库
-- **Pinia** - Vue 状态管理
-- **Axios** - HTTP 客户端
-- **Vue Router** - 路由管理（Nuxt 内置）
+[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## 开发
+## Recommended Browser Setup
 
-```bash
-# 安装依赖
+- Chromium-based browsers (Chrome, Edge, Brave, etc.):
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
+- Firefox:
+  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
+  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
 npm install
+```
 
-# 启动开发服务器 (http://localhost:3000)
+### Compile and Hot-Reload for Development
+
+```sh
 npm run dev
+```
 
-# 构建生产版本
+### Type-Check, Compile and Minify for Production
+
+```sh
 npm run build
-
-# 预览生产版本
-npm run preview
 ```
 
-## 项目结构
+### Lint with [ESLint](https://eslint.org/)
 
-```
-library-admin-frontend/
-├── assets/          # 静态资源
-├── components/      # Vue 组件
-├── composables/     # 组合式函数
-├── layouts/         # 布局组件
-├── pages/           # 页面路由
-├── plugins/         # 插件
-├── stores/          # Pinia 状态管理
-├── utils/           # 工具函数
-├── app.vue          # 根组件
-└── nuxt.config.ts   # Nuxt 配置
+```sh
+npm run lint
 ```
