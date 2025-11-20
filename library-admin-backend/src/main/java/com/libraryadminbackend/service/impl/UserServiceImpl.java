@@ -59,7 +59,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         synchronized (userAccount.intern()) {
             // 账户不能重复
             QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-            queryWrapper.eq("userAccount", userAccount);
+            queryWrapper.eq("username", userAccount);
             long count = this.baseMapper.selectCount(queryWrapper);
             if (count > 0) {
                 throw new BusinessException(ErrorCode.PARAMS_ERROR, "账号重复");
@@ -68,13 +68,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             String encryptPassword = DigestUtils.md5DigestAsHex((SALT + userPassword).getBytes());
             // 3. 插入数据
             User user = new User();
-            user.setUserAccount(userAccount);
-            user.setUserPassword(encryptPassword);
+            user.setUsername(userAccount);
+            user.setPassword(encryptPassword);
             boolean saveResult = this.save(user);
             if (!saveResult) {
                 throw new BusinessException(ErrorCode.SYSTEM_ERROR, "注册失败，数据库错误");
             }
-            return user.getId();
+            return user.getUserId();
         }
     }
 
@@ -94,8 +94,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         String encryptPassword = DigestUtils.md5DigestAsHex((SALT + userPassword).getBytes());
         // 查询用户是否存在
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("userAccount", userAccount);
-        queryWrapper.eq("userPassword", encryptPassword);
+        queryWrapper.eq("username", userAccount);
+        queryWrapper.eq("password", encryptPassword);
         User user = this.baseMapper.selectOne(queryWrapper);
         // 用户不存在
         if (user == null) {
@@ -119,11 +119,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 先判断是否已登录
         Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
         User currentUser = (User) userObj;
-        if (currentUser == null || currentUser.getId() == null) {
+        if (currentUser == null || currentUser.getUserId() == null) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
         }
         // 从数据库查询（追求性能的话可以注释，直接走缓存）
-        long userId = currentUser.getId();
+        long userId = currentUser.getUserId();
         currentUser = this.getById(userId);
         if (currentUser == null) {
             throw new BusinessException(ErrorCode.NOT_LOGIN_ERROR);
@@ -142,11 +142,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         // 先判断是否已登录
         Object userObj = request.getSession().getAttribute(USER_LOGIN_STATE);
         User currentUser = (User) userObj;
-        if (currentUser == null || currentUser.getId() == null) {
+        if (currentUser == null || currentUser.getUserId() == null) {
             return null;
         }
         // 从数据库查询（追求性能的话可以注释，直接走缓存）
-        long userId = currentUser.getId();
+        long userId = currentUser.getUserId();
         return this.getById(userId);
     }
 
@@ -166,7 +166,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
 
     @Override
     public boolean isAdmin(User user) {
-        return user != null && UserRoleEnum.ADMIN.getValue().equals(user.getUserRole());
+        return user != null && user.getUserType() != null && user.getUserType() == 1;
     }
 
     /**
@@ -217,21 +217,23 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (userQueryRequest == null) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "请求参数为空");
         }
-        Long id = userQueryRequest.getId();
-        String unionId = userQueryRequest.getUnionId();
-        String mpOpenId = userQueryRequest.getMpOpenId();
-        String userName = userQueryRequest.getUserName();
-        String userProfile = userQueryRequest.getUserProfile();
-        String userRole = userQueryRequest.getUserRole();
+        Long userId = userQueryRequest.getUserId();
+        Integer userType = userQueryRequest.getUserType();
+        String username = userQueryRequest.getUsername();
+        String name = userQueryRequest.getName();
+        String cardNo = userQueryRequest.getCardNo();
+        String phone = userQueryRequest.getPhone();
+        Integer status = userQueryRequest.getStatus();
         String sortField = userQueryRequest.getSortField();
         String sortOrder = userQueryRequest.getSortOrder();
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq(id != null, "id", id);
-        queryWrapper.eq(StrUtil.isNotBlank(unionId), "unionId", unionId);
-        queryWrapper.eq(StrUtil.isNotBlank(mpOpenId), "mpOpenId", mpOpenId);
-        queryWrapper.eq(StrUtil.isNotBlank(userRole), "userRole", userRole);
-        queryWrapper.like(StrUtil.isNotBlank(userProfile), "userProfile", userProfile);
-        queryWrapper.like(StrUtil.isNotBlank(userName), "userName", userName);
+        queryWrapper.eq(userId != null, "user_id", userId);
+        queryWrapper.eq(userType != null, "user_type", userType);
+        queryWrapper.eq(StrUtil.isNotBlank(username), "username", username);
+        queryWrapper.like(StrUtil.isNotBlank(name), "name", name);
+        queryWrapper.eq(StrUtil.isNotBlank(cardNo), "card_no", cardNo);
+        queryWrapper.like(StrUtil.isNotBlank(phone), "phone", phone);
+        queryWrapper.eq(status != null, "status", status);
         queryWrapper.orderBy(SqlUtils.validSortField(sortField), sortOrder.equals(CommonConstant.SORT_ORDER_ASC),
                 sortField);
         return queryWrapper;

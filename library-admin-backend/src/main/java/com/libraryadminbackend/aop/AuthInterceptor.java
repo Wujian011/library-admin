@@ -46,19 +46,19 @@ public class AuthInterceptor {
         if (mustRoleEnum == null) {
             return joinPoint.proceed();
         }
-        // 必须有该权限才通过
-        UserRoleEnum userRoleEnum = UserRoleEnum.getEnumByValue(loginUser.getUserRole());
-        if (userRoleEnum == null) {
+        // 检查用户类型：1=管理员 2=读者
+        Integer userType = loginUser.getUserType();
+        if (userType == null) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
         }
-        // 如果被封号，直接拒绝
-        if (UserRoleEnum.BAN.equals(userRoleEnum)) {
+        // 检查账号状态：1=启用 0=禁用
+        if (loginUser.getStatus() == null || loginUser.getStatus() == 0) {
             throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
         }
         // 必须有管理员权限
         if (UserRoleEnum.ADMIN.equals(mustRoleEnum)) {
-            // 用户没有管理员权限，拒绝
-            if (!UserRoleEnum.ADMIN.equals(userRoleEnum)) {
+            // 用户不是管理员（userType != 1），拒绝
+            if (userType != 1) {
                 throw new BusinessException(ErrorCode.NO_AUTH_ERROR);
             }
         }

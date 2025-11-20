@@ -14,27 +14,31 @@ import java.io.Serializable;
 public class UserQueryRequest extends PageRequest implements Serializable {
     private static final long serialVersionUID = 1L;
     /**
-     * id
+     * 用户ID
      */
-    private Long id;
+    private Long userId;
     /**
-     * 开放平台id
+     * 用户类型：1管理员 2读者
      */
-    private String unionId;
+    private Integer userType;
     /**
-     * 公众号openId
+     * 登录用户名
      */
-    private String mpOpenId;
+    private String username;
     /**
-     * 用户昵称
+     * 真实姓名
      */
-    private String userName;
+    private String name;
     /**
-     * 简介
+     * 借阅证号
      */
-    private String userProfile;
+    private String cardNo;
     /**
-     * 用户角色：user/admin/ban
+     * 联系电话
      */
-    private String userRole;
+    private String phone;
+    /**
+     * 账号状态：1启用 0禁用
+     */
+    private Integer status;
 }

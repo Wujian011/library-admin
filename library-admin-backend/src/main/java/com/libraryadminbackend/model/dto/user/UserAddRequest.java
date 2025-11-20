@@ -3,6 +3,7 @@ package com.libraryadminbackend.model.dto.user;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 用户创建请求
@@ -12,19 +13,43 @@ public class UserAddRequest implements Serializable {
 
     private static final long serialVersionUID = 1L;
     /**
-     * 用户昵称
+     * 用户类型：1管理员 2读者
      */
-    private String userName;
+    private Integer userType;
     /**
-     * 账号
+     * 登录用户名
      */
-    private String userAccount;
+    private String username;
     /**
-     * 用户头像
+     * 密码
      */
-    private String userAvatar;
+    private String password;
     /**
-     * 用户角色: user, admin
+     * 真实姓名
      */
-    private String userRole;
+    private String name;
+    /**
+     * 借阅证号（仅读者）
+     */
+    private String cardNo;
+    /**
+     * 性别：1男 2女 0未知
+     */
+    private Integer sex;
+    /**
+     * 出生日期
+     */
+    private Date birth;
+    /**
+     * 联系地址
+     */
+    private String address;
+    /**
+     * 联系电话
+     */
+    private String phone;
+    /**
+     * 账号状态：1启用 0禁用
+     */
+    private Integer status;
 }

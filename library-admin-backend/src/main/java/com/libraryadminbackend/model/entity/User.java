@@ -16,42 +16,54 @@ public class User implements Serializable {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
     /**
-     * id
+     * 用户ID
      */
-    @TableId(type = IdType.ASSIGN_ID)
-    private Long id;
+    @TableId( type = IdType.AUTO)
+    private Long userId;
     /**
-     * 用户账号
+     * 用户类型：1管理员 2读者
      */
-    private String userAccount;
+    private Integer userType;
     /**
-     * 用户密码
+     * 登录用户名
      */
-    private String userPassword;
+    private String username;
     /**
-     * 开放平台id
+     * 密码
      */
-    private String unionId;
+    private String password;
     /**
-     * 公众号openId
+     * 真实姓名
      */
-    private String mpOpenId;
+    private String name;
     /**
-     * 用户昵称
+     * 借阅证号（仅读者）
      */
-    private String userName;
+    private String cardNo;
     /**
-     * 用户头像
+     * 性别：1男 2女 0未知
      */
-    private String userAvatar;
+    private Integer sex;
     /**
-     * 用户简介
+     * 出生日期
      */
-    private String userProfile;
+    private Date birth;
     /**
-     * 用户角色：user/admin/ban
+     * 联系地址
      */
-    private String userRole;
+    private String address;
+    /**
+     * 联系电话
+     */
+    private String phone;
+    /**
+     * 账号状态：1启用 0禁用
+     */
+    private Integer status;
+    /**
+     * 最后登录时间
+     */
+    private Date lastLoginAt;
     /**
      * 创建时间
      */

@@ -30,3 +30,8 @@ library-admin-frontend/.env
 Thumbs.db
 /CLAUDE.md
 /.claude/
+
+# Auto-generated type declarations
+auto-imports.d.ts
+components.d.ts
+
