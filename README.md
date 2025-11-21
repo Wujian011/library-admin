@@ -68,6 +68,9 @@
 ### 借阅管理
 ![借阅管理](./docs/images/borrow-management.png)
 
+### 分类管理
+![分类管理](./docs/images/categories.png)
+
 ### 个人中心
 ![个人中心](./docs/images/profile.png)
 
