@@ -56,6 +56,11 @@ const router = createRouter({
           path: 'borrows',
           name: 'admin-borrows',
           component: () => import('../views/admin/BorrowsView.vue')
+        },
+        {
+          path: 'profile',
+          name: 'admin-profile',
+          component: () => import('../views/admin/ProfileView.vue')
         }
       ]
     },

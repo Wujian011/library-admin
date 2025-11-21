@@ -158,7 +158,13 @@ const onSubmit = async () => {
       icon: 'i-heroicons-check-circle'
     })
 
-    router.push('/')
+    // 根据用户类型跳转到对应的首页
+    const userType = userStore.userInfo?.userType
+    if (userType === 1) {
+      router.push('/admin/dashboard')
+    } else {
+      router.push('/user/home')
+    }
   } catch (error: any) {
     toast.add({
       title: '登录失败',

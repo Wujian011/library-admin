@@ -16,12 +16,16 @@ export interface UserLoginRequest {
 // 登录用户信息
 export interface LoginUserVO {
   userId: number
-  userAccount: string
-  userName?: string
-  userAvatar?: string
-  userProfile?: string
-  userRole: string
   userType: number // 1=管理员，2=读者
+  username: string // 登录用户名
+  name?: string // 真实姓名
+  cardNo?: string // 借阅证号（仅读者）
+  sex?: number // 性别：1男 2女 0未知
+  birth?: string // 出生日期
+  address?: string // 联系地址
+  phone?: string // 联系电话
+  status?: number // 账号状态：1启用 0禁用
+  lastLoginAt?: string // 最后登录时间
   createTime: string
   updateTime: string
 }
