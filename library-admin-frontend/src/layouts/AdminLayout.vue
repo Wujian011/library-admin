@@ -37,7 +37,7 @@ const menuItems = [
   { path: '/admin/users', label: '用户管理', icon: 'i-heroicons-users' },
   { path: '/admin/books', label: '图书管理', icon: 'i-heroicons-book-open' },
   { path: '/admin/categories', label: '分类管理', icon: 'i-heroicons-tag' },
-  { path: '/admin/borrows', label: '借阅管理', icon: 'i-heroicons-clipboard-document-list' },
-  { path: '/admin/settings', label: '系统设置', icon: 'i-heroicons-cog-6-tooth' }
+  { path: '/admin/borrows', label: '借阅管理', icon: 'i-heroicons-clipboard-document-list' }
+
 ]
 </script>

@@ -1,4 +1,4 @@
-import axios, { type AxiosInstance, type AxiosRequestConfig, type AxiosResponse } from 'axios'
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios'
 
 // 创建 axios 实例
 const request: AxiosInstance = axios.create({
@@ -29,6 +29,11 @@ request.interceptors.response.use(
     // 后端返回的数据结构：{ code, data, message }
     if (data.code === 0) {
       return data
+    } else if (data.code === 40100) {
+      // 用户未登录，清除本地存储并跳转到登录页
+      localStorage.removeItem('user')
+      window.location.href = '/login'
+      return Promise.reject(new Error(data.message || '未登录'))
     } else {
       // 业务错误
       return Promise.reject(new Error(data.message || '请求失败'))
