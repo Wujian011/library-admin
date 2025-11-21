@@ -4,6 +4,7 @@ import com.libraryadminbackend.annotation.AuthCheck;
 import com.libraryadminbackend.common.BaseResponse;
 import com.libraryadminbackend.common.ResultUtils;
 import com.libraryadminbackend.constant.UserConstant;
+import com.libraryadminbackend.model.vo.BorrowTrendVO;
 import com.libraryadminbackend.model.vo.DashboardOverviewVO;
 import com.libraryadminbackend.service.DashboardService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,5 +35,17 @@ public class DashboardController {
     public BaseResponse<DashboardOverviewVO> getOverviewStatistics() {
         DashboardOverviewVO statistics = dashboardService.getOverviewStatistics();
         return ResultUtils.success(statistics);
+    }
+
+    /**
+     * 获取借阅趋势统计数据（最近7天）
+     *
+     * @return 借阅趋势数据
+     */
+    @GetMapping("/borrow-trend")
+    @AuthCheck(mustRole = UserConstant.ADMIN_ROLE)
+    public BaseResponse<BorrowTrendVO> getBorrowTrend() {
+        BorrowTrendVO trend = dashboardService.getBorrowTrend();
+        return ResultUtils.success(trend);
     }
 }

@@ -1,5 +1,6 @@
 package com.libraryadminbackend.service;
 
+import com.libraryadminbackend.model.vo.BorrowTrendVO;
 import com.libraryadminbackend.model.vo.DashboardOverviewVO;
 
 /**
@@ -13,4 +14,11 @@ public interface DashboardService {
      * @return 统计数据
      */
     DashboardOverviewVO getOverviewStatistics();
+
+    /**
+     * 获取借阅趋势统计数据（最近7天）
+     *
+     * @return 借阅趋势数据
+     */
+    BorrowTrendVO getBorrowTrend();
 }

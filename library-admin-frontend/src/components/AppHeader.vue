@@ -2,7 +2,7 @@
   <header class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
     <div class="flex items-center justify-between h-16 px-6">
       <div class="flex items-center gap-3">
-        <UIcon name="i-heroicons-book-open" class="w-8 h-8 text-primary" />
+              <UIcon name="i-heroicons-book-open" class="w-8 h-8 text-primary" />
         <span class="text-xl font-bold">图书管理系统</span>
       </div>
 

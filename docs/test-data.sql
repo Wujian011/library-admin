@@ -7,73 +7,103 @@ USE library_admin;
 -- ============================================
 -- 图书分类测试数据
 -- ============================================
-INSERT INTO class_info (class_name, user_id_creator) VALUES
-('文学小说', 1),
-('历史传记', 1),
-('科技科普', 1),
-('经济管理', 1),
-('计算机', 1),
-('心理学', 1),
-('哲学宗教', 1),
-('艺术设计', 1),
-('教育考试', 1),
-('儿童读物', 1);
+INSERT INTO class_info (class_name, user_id_creator)
+VALUES ('文学小说', 1),
+       ('历史传记', 1),
+       ('科技科普', 1),
+       ('经济管理', 1),
+       ('计算机', 1),
+       ('心理学', 1),
+       ('哲学宗教', 1),
+       ('艺术设计', 1),
+       ('教育考试', 1),
+       ('儿童读物', 1);
 
 -- ============================================
 -- 图书信息测试数据
 -- ============================================
-INSERT INTO book_info (name, author, ISBN, publisher, pub_time, language, price, total_qty, available_qty, introduction, class_id, status, user_id_creator) VALUES
+INSERT INTO book_info (name, author, ISBN, publisher, pub_time, language, price, total_qty, available_qty, introduction,
+                       class_id, status, user_id_creator)
+VALUES
 -- 文学小说
-('活着', '余华', '9787506365437', '作家出版社', '2012-08-01', '中文', 29.00, 10, 8, '讲述了农村人福贵悲惨的人生遭遇。福贵本是个阔少爷，可他嗜赌如命，终于赌光了家业，一贫如洗。', 1, 1, 1),
-('百年孤独', '加西亚·马尔克斯', '9787544253994', '南海出版公司', '2011-06-01', '中文', 39.50, 8, 6, '《百年孤独》是魔幻现实主义文学的代表作，描写了布恩迪亚家族七代人的传奇故事。', 1, 1, 1),
-('三体', '刘慈欣', '9787536692930', '重庆出版社', '2008-01-01', '中文', 23.00, 15, 12, '文化大革命如火如荼进行的同时，军方探寻外星文明的绝秘计划"红岸工程"取得了突破性进展。', 1, 1, 1),
-('围城', '钱钟书', '9787020024759', '人民文学出版社', '1991-02-01', '中文', 19.00, 6, 4, '《围城》是钱钟书所著的长篇小说，是中国现代文学史上一部风格独特的讽刺小说。', 1, 1, 1),
-('红楼梦', '曹雪芹', '9787020002207', '人民文学出版社', '1996-12-01', '中文', 59.70, 5, 3, '《红楼梦》是一部具有世界影响力的人情小说，中国古典四大名著之首。', 1, 1, 1),
+('活着', '余华', '9787506365437', '作家出版社', '2012-08-01', '中文', 29.00, 10, 8,
+ '讲述了农村人福贵悲惨的人生遭遇。福贵本是个阔少爷，可他嗜赌如命，终于赌光了家业，一贫如洗。', 1, 1, 1),
+('百年孤独', '加西亚·马尔克斯', '9787544253994', '南海出版公司', '2011-06-01', '中文', 39.50, 8, 6,
+ '《百年孤独》是魔幻现实主义文学的代表作，描写了布恩迪亚家族七代人的传奇故事。', 1, 1, 1),
+('三体', '刘慈欣', '9787536692930', '重庆出版社', '2008-01-01', '中文', 23.00, 15, 12,
+ '文化大革命如火如荼进行的同时，军方探寻外星文明的绝秘计划"红岸工程"取得了突破性进展。', 1, 1, 1),
+('围城', '钱钟书', '9787020024759', '人民文学出版社', '1991-02-01', '中文', 19.00, 6, 4,
+ '《围城》是钱钟书所著的长篇小说，是中国现代文学史上一部风格独特的讽刺小说。', 1, 1, 1),
+('红楼梦', '曹雪芹', '9787020002207', '人民文学出版社', '1996-12-01', '中文', 59.70, 5, 3,
+ '《红楼梦》是一部具有世界影响力的人情小说，中国古典四大名著之首。', 1, 1, 1),
 
 -- 历史传记
-('明朝那些事儿', '当年明月', '9787213041419', '浙江人民出版社', '2009-04-01', '中文', 358.00, 7, 5, '《明朝那些事儿》主要讲述的是从1344年到1644年这三百年间关于明朝的一些故事。', 2, 1, 1),
-('人类简史', '尤瓦尔·赫拉利', '9787508647357', '中信出版社', '2014-11-01', '中文', 68.00, 10, 7, '从十万年前有生命迹象开始到21世纪资本、科技交织的人类发展史。', 2, 1, 1),
-('万历十五年', '黄仁宇', '9787108009821', '生活·读书·新知三联书店', '1997-05-01', '中文', 26.00, 4, 2, '万历十五年，亦即公元1587年，在西欧历史上为西班牙舰队全部出动征英的前一年。', 2, 1, 1),
+('明朝那些事儿', '当年明月', '9787213041419', '浙江人民出版社', '2009-04-01', '中文', 358.00, 7, 5,
+ '《明朝那些事儿》主要讲述的是从1344年到1644年这三百年间关于明朝的一些故事。', 2, 1, 1),
+('人类简史', '尤瓦尔·赫拉利', '9787508647357', '中信出版社', '2014-11-01', '中文', 68.00, 10, 7,
+ '从十万年前有生命迹象开始到21世纪资本、科技交织的人类发展史。', 2, 1, 1),
+('万历十五年', '黄仁宇', '9787108009821', '生活·读书·新知三联书店', '1997-05-01', '中文', 26.00, 4, 2,
+ '万历十五年，亦即公元1587年，在西欧历史上为西班牙舰队全部出动征英的前一年。', 2, 1, 1),
 
 -- 科技科普
-('时间简史', '史蒂芬·霍金', '9787535732309', '湖南科学技术出版社', '2010-04-01', '中文', 45.00, 8, 6, '讲述关于宇宙本性的最前沿知识，从宇宙大爆炸到黑洞。', 3, 1, 1),
-('物种起源', '查尔斯·达尔文', '9787544277969', '南海出版公司', '2013-10-01', '中文', 68.00, 5, 4, '《物种起源》是达尔文论述生物进化的重要著作。', 3, 1, 1),
+('时间简史', '史蒂芬·霍金', '9787535732309', '湖南科学技术出版社', '2010-04-01', '中文', 45.00, 8, 6,
+ '讲述关于宇宙本性的最前沿知识，从宇宙大爆炸到黑洞。', 3, 1, 1),
+('物种起源', '查尔斯·达尔文', '9787544277969', '南海出版公司', '2013-10-01', '中文', 68.00, 5, 4,
+ '《物种起源》是达尔文论述生物进化的重要著作。', 3, 1, 1),
 
 -- 经济管理
-('穷查理宝典', '查理·芒格', '9787508663326', '中信出版社', '2016-08-01', '中文', 168.00, 6, 4, '完整收录了查理·芒格的个人传记与投资哲学。', 4, 1, 1),
-('原则', '瑞·达利欧', '9787508684031', '中信出版社', '2018-01-01', '中文', 98.00, 9, 7, '瑞·达利欧是全世界顶尖投资家、企业家之一，本书分享了他的生活和工作原则。', 4, 1, 1),
-('经济学原理', '曼昆', '9787301150894', '北京大学出版社', '2009-04-01', '中文', 128.00, 12, 10, '本书是世界上最流行的经济学教材之一。', 4, 1, 1),
+('穷查理宝典', '查理·芒格', '9787508663326', '中信出版社', '2016-08-01', '中文', 168.00, 6, 4,
+ '完整收录了查理·芒格的个人传记与投资哲学。', 4, 1, 1),
+('原则', '瑞·达利欧', '9787508684031', '中信出版社', '2018-01-01', '中文', 98.00, 9, 7,
+ '瑞·达利欧是全世界顶尖投资家、企业家之一，本书分享了他的生活和工作原则。', 4, 1, 1),
+('经济学原理', '曼昆', '9787301150894', '北京大学出版社', '2009-04-01', '中文', 128.00, 12, 10,
+ '本书是世界上最流行的经济学教材之一。', 4, 1, 1),
 
 -- 计算机
-('深入理解计算机系统', 'Randal E.Bryant', '9787111544937', '机械工业出版社', '2016-11-01', '中文', 139.00, 8, 5, '本书从程序员的视角详细阐述计算机系统的本质概念。', 5, 1, 1),
-('算法导论', 'able', '9787111407010', '机械工业出版社', '2012-12-01', '中文', 128.00, 6, 3, '本书全面论述了算法的内容，从一定深度上涵盖了算法的诸多方面。', 5, 1, 1),
-('JavaScript高级程序设计', 'Nicholas C.Zakas', '9787115275790', '人民邮电出版社', '2012-03-01', '中文', 99.00, 10, 8, '本书是JavaScript超级畅销书的新版，详细讲解了JavaScript的各个方面。', 5, 1, 1),
-('代码整洁之道', 'able', '9787115216878', '人民邮电出版社', '2010-01-01', '中文', 59.00, 7, 5, '本书提出一种观念：代码质量与其整洁度成正比。', 5, 1, 1),
+('深入理解计算机系统', 'Randal E.Bryant', '9787111544937', '机械工业出版社', '2016-11-01', '中文', 139.00, 8, 5,
+ '本书从程序员的视角详细阐述计算机系统的本质概念。', 5, 1, 1),
+('算法导论', 'able', '9787111407010', '机械工业出版社', '2012-12-01', '中文', 128.00, 6, 3,
+ '本书全面论述了算法的内容，从一定深度上涵盖了算法的诸多方面。', 5, 1, 1),
+('JavaScript高级程序设计', 'Nicholas C.Zakas', '9787115275790', '人民邮电出版社', '2012-03-01', '中文', 99.00, 10, 8,
+ '本书是JavaScript超级畅销书的新版，详细讲解了JavaScript的各个方面。', 5, 1, 1),
+('代码整洁之道', 'able', '9787115216878', '人民邮电出版社', '2010-01-01', '中文', 59.00, 7, 5,
+ '本书提出一种观念：代码质量与其整洁度成正比。', 5, 1, 1),
 
 -- 心理学
-('思考，快与慢', '丹尼尔·卡尼曼', '9787508633558', '中信出版社', '2012-07-01', '中文', 69.00, 8, 6, '在本书中，卡尼曼会带领我们体验一次思维的创新之旅。', 6, 1, 1),
-('乌合之众', '古斯塔夫·勒庞', '9787511324672', '中国华侨出版社', '2013-01-01', '中文', 26.80, 5, 3, '本书是解析群体心理的经典名著。', 6, 1, 1),
-('自卑与超越', '阿尔弗雷德·阿德勒', '9787544767989', '译林出版社', '2016-06-01', '中文', 32.00, 6, 4, '本书是阿德勒从个体心理学观点出发，阐明人生道路和人生意义的通俗性读物。', 6, 1, 1),
+('思考，快与慢', '丹尼尔·卡尼曼', '9787508633558', '中信出版社', '2012-07-01', '中文', 69.00, 8, 6,
+ '在本书中，卡尼曼会带领我们体验一次思维的创新之旅。', 6, 1, 1),
+('乌合之众', '古斯塔夫·勒庞', '9787511324672', '中国华侨出版社', '2013-01-01', '中文', 26.80, 5, 3,
+ '本书是解析群体心理的经典名著。', 6, 1, 1),
+('自卑与超越', '阿尔弗雷德·阿德勒', '9787544767989', '译林出版社', '2016-06-01', '中文', 32.00, 6, 4,
+ '本书是阿德勒从个体心理学观点出发，阐明人生道路和人生意义的通俗性读物。', 6, 1, 1),
 
 -- 哲学宗教
-('苏菲的世界', '乔斯坦·贾德', '9787506394864', '作家出版社', '2017-08-01', '中文', 38.00, 7, 5, '本书以小说的形式，通过一名哲学导师向一个叫苏菲的女孩传授哲学知识的经过。', 7, 1, 1),
-('道德经', '老子', '9787101066463', '中华书局', '2009-03-01', '中文', 15.00, 4, 2, '《道德经》是中国古代先秦诸子分家前的一部著作。', 7, 1, 1),
+('苏菲的世界', '乔斯坦·贾德', '9787506394864', '作家出版社', '2017-08-01', '中文', 38.00, 7, 5,
+ '本书以小说的形式，通过一名哲学导师向一个叫苏菲的女孩传授哲学知识的经过。', 7, 1, 1),
+('道德经', '老子', '9787101066463', '中华书局', '2009-03-01', '中文', 15.00, 4, 2,
+ '《道德经》是中国古代先秦诸子分家前的一部著作。', 7, 1, 1),
 
 -- 艺术设计
-('设计中的设计', '原研哉', '9787532751587', '广西师范大学出版社', '2010-09-01', '中文', 48.00, 5, 3, '设计到底是什么？作为一名从业二十余年并且具有世界影响的设计师，原研哉对自己提出了这样一个问题。', 8, 1, 1),
-('艺术的故事', '贡布里希', '9787807463726', '广西美术出版社', '2008-04-01', '中文', 280.00, 3, 2, '《艺术的故事》概括地叙述了从最早的洞窟绘画到当今的实验艺术的发展历程。', 8, 1, 1),
+('设计中的设计', '原研哉', '9787532751587', '广西师范大学出版社', '2010-09-01', '中文', 48.00, 5, 3,
+ '设计到底是什么？作为一名从业二十余年并且具有世界影响的设计师，原研哉对自己提出了这样一个问题。', 8, 1, 1),
+('艺术的故事', '贡布里希', '9787807463726', '广西美术出版社', '2008-04-01', '中文', 280.00, 3, 2,
+ '《艺术的故事》概括地叙述了从最早的洞窟绘画到当今的实验艺术的发展历程。', 8, 1, 1),
 
 -- 教育考试
-('如何阅读一本书', '莫提默·J·艾德勒', '9787100040945', '商务印书馆', '2004-01-01', '中文', 38.00, 10, 8, '本书是一本阅读指南，介绍了阅读的方法、技巧，阅读所应具备的广阔视野。', 9, 1, 1),
+('如何阅读一本书', '莫提默·J·艾德勒', '9787100040945', '商务印书馆', '2004-01-01', '中文', 38.00, 10, 8,
+ '本书是一本阅读指南，介绍了阅读的方法、技巧，阅读所应具备的广阔视野。', 9, 1, 1),
 
 -- 儿童读物
-('小王子', '安托万·德·圣-埃克苏佩里', '9787020042494', '人民文学出版社', '2003-08-01', '中文', 22.00, 12, 10, '小王子是一个超凡脱俗的仙童，他住在一颗只比他大一丁点儿的小行星上。', 10, 1, 1),
-('夏洛的网', 'E·B·怀特', '9787532738823', '上海译文出版社', '2008-03-01', '中文', 22.00, 8, 6, '一个蜘蛛和小猪的故事，写给孩子，也写给大人。', 10, 1, 1);
+('小王子', '安托万·德·圣-埃克苏佩里', '9787020042494', '人民文学出版社', '2003-08-01', '中文', 22.00, 12, 10,
+ '小王子是一个超凡脱俗的仙童，他住在一颗只比他大一丁点儿的小行星上。', 10, 1, 1),
+('夏洛的网', 'E·B·怀特', '9787532738823', '上海译文出版社', '2008-03-01', '中文', 22.00, 8, 6,
+ '一个蜘蛛和小猪的故事，写给孩子，也写给大人。', 10, 1, 1);
 
 -- ============================================
 -- 用户测试数据
 -- ============================================
-INSERT INTO user (user_type, username, password, name, card_no, sex, birth, address, phone, status, user_id_creator) VALUES
+INSERT INTO user (user_type, username, password, name, card_no, sex, birth, address, phone, status, user_id_creator)
+VALUES
 -- 管理员
 (1, 'admin', '123456', '系统管理员', NULL, 1, '1990-01-01', '北京市海淀区', '13800000001', 1, NULL),
 -- 读者
@@ -86,7 +116,8 @@ INSERT INTO user (user_type, username, password, name, card_no, sex, birth, addr
 -- ============================================
 -- 借阅记录测试数据
 -- ============================================
-INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, user_id_creator) VALUES
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, user_id_creator)
+VALUES
 -- 已还的记录
 (2, 1, '2024-10-01 10:00:00', '2024-10-31 23:59:59', '2024-10-25 14:30:00', 2, '按时归还', 1),
 (3, 3, '2024-10-05 09:30:00', '2024-11-04 23:59:59', '2024-10-28 16:00:00', 2, NULL, 1),
@@ -110,10 +141,123 @@ INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, 
 -- ============================================
 -- 查看插入结果
 -- ============================================
-SELECT '图书分类数量' AS '统计项', COUNT(*) AS '数量' FROM class_info WHERE is_delete = 0
+SELECT '图书分类数量' AS '统计项', COUNT(*) AS '数量'
+FROM class_info
+WHERE is_delete = 0
 UNION ALL
-SELECT '图书总数' AS '统计项', COUNT(*) AS '数量' FROM book_info WHERE is_delete = 0
+SELECT '图书总数' AS '统计项', COUNT(*) AS '数量'
+FROM book_info
+WHERE is_delete = 0
 UNION ALL
-SELECT '用户数量' AS '统计项', COUNT(*) AS '数量' FROM user WHERE is_delete = 0
+SELECT '用户数量' AS '统计项', COUNT(*) AS '数量'
+FROM user
+WHERE is_delete = 0
 UNION ALL
-SELECT '借阅记录数' AS '统计项', COUNT(*) AS '数量' FROM lendlist WHERE is_delete = 0;
+SELECT '借阅记录数' AS '统计项', COUNT(*) AS '数量'
+FROM lendlist
+WHERE is_delete = 0;
+
+-- 插入测试借阅数据（最近7天）
+-- 注意：需要先确保有用户和图书数据，这里假设 userId=2, bookId=1 存在
+
+-- 清理旧的测试数据（可选，如果需要重新生成）
+-- DELETE FROM lendlist WHERE note = 'test_data';
+
+-- 动态生成最近7天的借阅测试数据
+-- 使用 DATE_SUB 和 CURDATE() 函数，确保数据始终是最近7天的
+
+-- 7天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 1, DATE_SUB(CURDATE(), INTERVAL 6 DAY) + INTERVAL 9 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 6 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 2, DATE_SUB(CURDATE(), INTERVAL 6 DAY) + INTERVAL 10 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 6 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 3, DATE_SUB(CURDATE(), INTERVAL 6 DAY) + INTERVAL 14 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 6 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 5 DAY) + INTERVAL 10 HOUR, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 6天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 4, DATE_SUB(CURDATE(), INTERVAL 5 DAY) + INTERVAL 8 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 5 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 5, DATE_SUB(CURDATE(), INTERVAL 5 DAY) + INTERVAL 11 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 5 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 6, DATE_SUB(CURDATE(), INTERVAL 5 DAY) + INTERVAL 15 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 5 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 4 DAY) + INTERVAL 9 HOUR, 2, 'test_data', NOW(), NOW(), 0),
+       (2, 7, DATE_SUB(CURDATE(), INTERVAL 5 DAY) + INTERVAL 16 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 5 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 4 DAY) + INTERVAL 14 HOUR, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 5天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 8, DATE_SUB(CURDATE(), INTERVAL 4 DAY) + INTERVAL 9 HOUR + INTERVAL 15 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 4 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 9, DATE_SUB(CURDATE(), INTERVAL 4 DAY) + INTERVAL 13 HOUR + INTERVAL 45 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 4 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 3 DAY) + INTERVAL 10 HOUR + INTERVAL 30 MINUTE, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 4天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 10, DATE_SUB(CURDATE(), INTERVAL 3 DAY) + INTERVAL 8 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 3 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 11, DATE_SUB(CURDATE(), INTERVAL 3 DAY) + INTERVAL 10 HOUR + INTERVAL 20 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 3 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 12, DATE_SUB(CURDATE(), INTERVAL 3 DAY) + INTERVAL 14 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 3 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 13, DATE_SUB(CURDATE(), INTERVAL 3 DAY) + INTERVAL 16 HOUR + INTERVAL 45 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 3 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 2 DAY) + INTERVAL 11 HOUR, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 3天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 14, DATE_SUB(CURDATE(), INTERVAL 2 DAY) + INTERVAL 9 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 2 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 15, DATE_SUB(CURDATE(), INTERVAL 2 DAY) + INTERVAL 11 HOUR + INTERVAL 15 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 2 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 9 HOUR + INTERVAL 30 MINUTE, 2, 'test_data', NOW(), NOW(), 0),
+       (2, 16, DATE_SUB(CURDATE(), INTERVAL 2 DAY) + INTERVAL 15 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 2 DAY), INTERVAL 14 DAY),
+        DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 14 HOUR, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 2天前的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 17, DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 8 HOUR + INTERVAL 45 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 1 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 18, DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 10 HOUR,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 1 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 19, DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 13 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 1 DAY), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(), 0),
+       (2, 20, DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 15 HOUR + INTERVAL 45 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 1 DAY), INTERVAL 14 DAY), CURDATE() + INTERVAL 10 HOUR, 2, 'test_data',
+        NOW(), NOW(), 0),
+       (2, 21, DATE_SUB(CURDATE(), INTERVAL 1 DAY) + INTERVAL 16 HOUR + INTERVAL 30 MINUTE,
+        DATE_ADD(DATE_SUB(CURDATE(), INTERVAL 1 DAY), INTERVAL 14 DAY),
+        CURDATE() + INTERVAL 11 HOUR + INTERVAL 30 MINUTE, 2, 'test_data', NOW(), NOW(), 0);
+
+-- 今天的数据
+INSERT INTO lendlist (user_id, book_id, lend_date, due_date, back_date, status, note, create_time, update_time,
+                      is_delete)
+VALUES (2, 22, CURDATE() + INTERVAL 9 HOUR, DATE_ADD(CURDATE(), INTERVAL 14 DAY), NULL, 1, 'test_data', NOW(), NOW(),
+        0),
+       (2, 23, CURDATE() + INTERVAL 10 HOUR + INTERVAL 30 MINUTE, DATE_ADD(CURDATE(), INTERVAL 14 DAY), NULL, 1,
+        'test_data', NOW(), NOW(), 0),
+       (2, 24, CURDATE() + INTERVAL 11 HOUR + INTERVAL 45 MINUTE, DATE_ADD(CURDATE(), INTERVAL 14 DAY), NULL, 1,
+        'test_data', NOW(), NOW(), 0),
+       (2, 25, CURDATE() + INTERVAL 14 HOUR, DATE_ADD(CURDATE(), INTERVAL 14 DAY), CURDATE() + INTERVAL 16 HOUR, 2,
+        'test_data', NOW(), NOW(), 0);
+
+-- 查询验证数据
+SELECT DATE(lend_date)                                                                   as 借出日期,
+       COUNT(*)                                                                          as 借出数量,
+       SUM(CASE WHEN status = 2 AND DATE(back_date) = DATE(lend_date) THEN 1 ELSE 0 END) as 当日归还数量
+FROM lendlist
+WHERE note = 'test_data'
+GROUP BY DATE(lend_date)
+ORDER BY DATE(lend_date) DESC;

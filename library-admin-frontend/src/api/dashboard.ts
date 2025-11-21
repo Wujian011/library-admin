@@ -15,9 +15,23 @@ export interface DashboardOverviewVO {
   todayNewBorrows: number // 今日新增借阅
 }
 
+// 借阅趋势统计数据
+export interface BorrowTrendVO {
+  dates: string[]         // 日期列表
+  borrowCounts: number[]  // 借阅数量列表
+  returnCounts: number[]  // 归还数量列表
+}
+
 /**
  * 获取首页概览统计数据
  */
 export const getOverviewStatistics = () => {
   return request.get<any, BaseResponse<DashboardOverviewVO>>('/dashboard/overview')
+}
+
+/**
+ * 获取借阅趋势统计数据（最近7天）
+ */
+export const getBorrowTrend = () => {
+  return request.get<any, BaseResponse<BorrowTrendVO>>('/dashboard/borrow-trend')
 }
